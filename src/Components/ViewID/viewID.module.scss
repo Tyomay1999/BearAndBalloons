@@ -1,3 +1,4 @@
+@import "../../_main";
 .main{
   width: 100%;
   height: 100%;
@@ -24,18 +25,45 @@
 .loaded_page {
   width: 100%;
   height: 100vh;
+  background: $content_color;
   .block{
     width: 100%;
-    height: 33.3vh;
   }
   .block.logo_block {
-    background: #61dafb;
+    height: calc(100% / 7 * 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+      margin: 0;
+      padding: 0;
+      font-size: 5rem;
+      font-family: 'Sevillana', cursive;
+    }
   }
   .block.middle_block {
-    background: purple;
+    height: calc(100% / 7 * 3);
+    display: flex;
+    //background: purple;
+    .bear_left{
+      width: calc(100% / 5);
+      //background: yellowgreen;
+    }
+    .input_block{
+      width: calc(100% / 5 * 3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .bear_right{
+      //background: red;
+      width: calc(100% / 5 );
+    }
   }
   .block.under_block {
-    background: pink;
+    height: calc(100% / 7 * 3);
+    //background: pink;
   }
 }
 
@@ -47,7 +75,7 @@
   left: 0;
   width: 0;
   height: 20%;
-  background-color: #e50000;
+  background-color: #61dafb;
   transition: width 0.7s ease;
 }
 .loader .loader__tile:nth-child(0) {
@@ -102,4 +130,53 @@
 }
 .loader--active .loader__tile:nth-child(5) {
   transition-delay: 0.8s;
+}
+//----------------------------INPUT
+.input_container{
+  margin-bottom: 100px;
+  position: relative;
+  width: 20rem;
+  display: flex;
+  border-bottom: 1px solid black;
+
+  label, .active{
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: .7rem;
+    //font-family: 'Sevillana', cursive;
+    font-size: 1.6rem;
+    transition: top .5s, left .7s;
+  }
+  .active{
+    top: -.8rem;
+    left: .2rem;
+    color: gray;
+    font-size: 1.2rem;
+    transition: top .5s, left .7s;
+  }
+  input{
+    padding-left: .7rem;
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .search_icon{
+    cursor: pointer;
+    width: 5rem;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: .4rem;
+    i{
+      margin: 0;
+      padding: 0;
+      font-size: 1.4rem;
+    }
+    //background: #282c34;
+  }
 }
