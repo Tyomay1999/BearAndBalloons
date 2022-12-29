@@ -1,16 +1,15 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import greetingStyle from './greeting.module.scss'
-// import { useDispatch, useSelector } from "react-redux";
-// import { change_loading } from "../../Redux/Actions/common.actions";
 import bear from "../../Assets/teddy-bear1.png"
 import ViewID from "../ViewID/viewID";
+import Message from "../Message/message";
+import { useSelector } from "react-redux";
 
 const Greeting = () => {
     // const dispatch = useDispatch()
     // const delta = process.env.REACT_APP_SERVER_URL
-    // const common = useSelector(state => state.commonReducer)
+    const common = useSelector(state => state.commonReducer)
     const [is_touched, touch] = useState(false)
-
     return <div className={greetingStyle.main}>
         <div className={greetingStyle.right_block}>
             <div className={greetingStyle.bear}>
@@ -26,6 +25,7 @@ const Greeting = () => {
             </div>
         </div>
         <ViewID is_touched={is_touched} />
+        <Message customer_data={common.customer_data} />
     </div>
 }
 

@@ -2,7 +2,11 @@ import React, { useRef, useState } from 'react'
 import viewIDStyles from './viewID.module.scss'
 import { useDispatch } from "react-redux";
 import { send_customer_id } from "../../Redux/Actions/common.actions";
-
+const colors = {
+    bear_color: "#8a5013",
+    active_color_type_1: "whitesmoke",
+    active_color_type_2: "black"
+}
 const ViewID = ( { is_touched } ) => {
     const dispatch = useDispatch()
     const user_id_ref = useRef( 0 )
@@ -16,15 +20,15 @@ const ViewID = ( { is_touched } ) => {
             className={ is_touched ? `${ viewIDStyles.loader } ${ viewIDStyles[ 'loader--active' ] }` : viewIDStyles.loader }>
             <div className={ viewIDStyles.loaded_page }>
                 <div className={ `${ viewIDStyles.logo_block } ${ viewIDStyles.block }` }>
-                    <h1>🧸Bear And Balloons🎈</h1>
+                    <h1><span>🧸</span>Bear & Balloons<span>🎈</span></h1>
                 </div>
                 <div className={ `${ viewIDStyles.middle_block } ${ viewIDStyles.block }` }>
-                    <div className={ viewIDStyles.bear_left }></div>
+                    <div className={ viewIDStyles.bear_left } ></div>
                     <div className={ viewIDStyles.input_block }>
                         <div
                             className={ viewIDStyles.input_container }
                             style={{
-                                borderColor: is_active ? "red" : "black"
+                                borderColor: is_active ? colors.active_color_type_1 : colors.bear_color
                             }}
                             >
                             <label
@@ -50,7 +54,7 @@ const ViewID = ( { is_touched } ) => {
                             <div className={ viewIDStyles.search_icon }>
                                 <i
                                     style={{
-                                        color: is_active ? "red" : "black"
+                                        color: is_active ? colors.active_color_type_2 : colors.bear_color
                                     }}
                                     onClick={ () => {
                                         if ( user_id_ref.current ) {

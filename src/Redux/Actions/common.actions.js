@@ -6,6 +6,7 @@ export const LOADING = "LOADING SWITCH"
 export const NOTIFICATION = "SET NOTIFICATION"
 export const CUSTOMER_DATA = "SET CUSTOMER DATA"
 export const SHOW_CUSTOMER_INFO = "CUSTOMER INFO"
+export const CLEAR_NOTIFICATION = "CLEAR NOTIFICATION"
 
 export const change_loading = ( payload = false ) => {
     return {
@@ -35,6 +36,13 @@ export const show_customer_info = (payload = false) => {
     }
 }
 
+export const clear_notification = () => {
+    return {
+        type: CLEAR_NOTIFICATION
+    }
+}
+
+
 
 export const send_customer_id = customer_id => async dispatch => {
     try {
@@ -46,9 +54,9 @@ export const send_customer_id = customer_id => async dispatch => {
             fd
         )
         if ( response.status ) {
-            dispatch( set_customer_data( response?.data ) )
-            if(serverUser.check_user_id() || serverUser.check_user_id() === 0){
-                return dispatch(set_customer_data(serverUser.check_user_id()))
+            // dispatch( set_customer_data( response?.data ) )
+            if(serverUser.check_user_id(customer_id) || serverUser.check_user_id(customer_id) === 0){
+                return dispatch(set_customer_data(serverUser.check_user_id(customer_id)))
             } else {
                 return dispatch(set_notification("Wrong id!"))
             }

@@ -1,0 +1,98 @@
+@import "../../_main";
+
+.messageContainer {
+  position: fixed;
+  top: 100px;
+  right: 5px;
+  max-width: 320px;
+  max-height: 70px;
+  min-width: 200px;
+  padding: 2rem;
+  background: white;
+  z-index: 999;
+  border-radius: 5px;
+  border-left: 8px solid #DC9345;
+  box-shadow: 5px 6px 7px gray ;
+
+  .message {
+    text-align: center;
+    color: #8a5013;
+    font-family: 'Sevillana', cursive;
+    margin: 0 5px;
+    font-size: 1.7rem;
+    font-weight: lighter;
+  }
+
+  .warningCircle, .closeButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .warningCircle {
+    left: .2rem;
+    color: #DC9345;
+
+    i {
+      font-size: 1.7rem;
+    }
+  }
+
+  .closeButton {
+    cursor: pointer;
+    right: .2rem;
+    color: #DC9345;
+
+    i {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.messageContainer.show {
+  animation: show_message 1s ease forwards;
+}
+
+@keyframes show_message {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .messageContainer {
+    top: 30px;
+    padding: 2.4rem;
+    .message {
+      font-size: 2rem;
+    }
+    .warningCircle, .closeButton {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .warningCircle {
+      left: 1rem;
+      color: #34D980;
+
+      i {
+        font-size: 2.6rem;
+      }
+    }
+
+    .closeButton {
+      right: 1rem;
+      i {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

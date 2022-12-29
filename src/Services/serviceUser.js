@@ -3,13 +3,13 @@ class Service {
         {
             id: process.env.REACT_APP_USER_ID,
             user_name: "Lana",
-            instagram_account: "@lana_08.08",
+            inst: "@lana_08.08",
             message: "Any text here"
         },
         {
             id: process.env.REACT_APP_USER_ID - 2,
             user_name: "Any name here",
-            instagram_account: "@any_account",
+            inst: "@any_account",
             message: "Any text here"
         }
     ]
@@ -19,10 +19,10 @@ class Service {
         if ( this.users[ 0 ].id === id ) {
             return 0
         }
-        if ( this.users[ 0 ].id === id ) {
+        if ( this.users[ 1 ].id === id ) {
             return 1
         }
-        return null
+        return false
     }
 
     get_user( id ) {

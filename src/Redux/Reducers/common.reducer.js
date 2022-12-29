@@ -2,7 +2,8 @@ import {
     LOADING,
     NOTIFICATION,
     CUSTOMER_DATA,
-    SHOW_CUSTOMER_INFO
+    SHOW_CUSTOMER_INFO,
+    CLEAR_NOTIFICATION
 } from "../Actions/common.actions";
 import serviceUser from "../../Services/serviceUser";
 
@@ -19,6 +20,8 @@ export const commonReducer = (state = initialState, action) => {
             return {...state, loading: action.payload}
         case NOTIFICATION:
             return {...state, notification: action.payload}
+        case CLEAR_NOTIFICATION:
+            return {...state, notification: ""}
         case SHOW_CUSTOMER_INFO:
             return {...state, show_info: action.payload}
         case CUSTOMER_DATA:
