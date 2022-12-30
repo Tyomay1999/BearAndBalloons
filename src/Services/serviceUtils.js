@@ -3,7 +3,7 @@ class Service {
     server_url = process.env.REACT_APP_SERVER_URL;
 
     get_server_url() {
-        return this.server_url_local
+        return this.server_url
     }
 }
 
