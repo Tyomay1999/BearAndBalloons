@@ -56,9 +56,50 @@
       align-items: center;
       flex-direction: column;
     }
+    $right_deg: -20deg;
+    $message_background: whitesmoke;
     .bear_right{
-      //background: red;
+      position: relative;
       width: calc(100% / 5 );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .bear_image_container_r,.hide_bear_r{
+        position: absolute;
+        right: -5rem;
+        width: 15rem;
+        height: 15rem;
+        transform: rotate($right_deg);
+          transition: right 3s;
+        .message{
+          position: absolute;
+          width: 15em;
+          top: 0;
+          left: -13rem;
+          padding: 1rem;
+          transform: rotate(-($right_deg));
+          border-radius: .5rem;
+          text-align: center;
+          background: $message_background;
+          box-shadow: -3px 4px 5px black, 3px 4px 5px $content_color;
+          z-index: 2;
+          span{
+            font-size: 1.375rem;
+            font-family: 'Sevillana', cursive;
+            font-weight: 600;
+          }
+        }
+        & > img{
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          //transform: rotate(-($right_deg));
+        }
+      }
+      .hide_bear_r{
+        right: -40rem;
+        transition: right 3s;
+      }
     }
   }
   .block.under_block {
@@ -66,7 +107,7 @@
     //background: pink;
   }
 }
-
+//---------------loader
 .loader .loader__icon svg {
   transform-origin: 0 0;
 }
@@ -179,5 +220,37 @@
       font-size: 1.4rem;
     }
     //background: #282c34;
+  }
+}
+//---------------------Logo
+@media screen and (min-width: 320px) and (max-width: 400px) {
+  .logo_block {
+    h1{
+      font-size: 3rem !important;
+      span{
+        font-size: 4rem !important;
+      }
+    }
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 495px) {
+  .logo_block {
+    h1{
+      font-size: 4rem !important;
+      span{
+        font-size: 5rem !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 496px) and (max-width: 720px) {
+  .logo_block {
+    h1{
+      font-size: 5rem !important;
+      span{
+        font-size: 6rem !important;
+      }
+    }
   }
 }

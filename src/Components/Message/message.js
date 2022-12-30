@@ -21,7 +21,13 @@ const Message = ( {
                         Inst.: <span>{ customer_data?.inst }</span>
                     </h2>
                     {/*<h2 className={messageStyle.user_id}></h2>*/ }
-                    <p className={ messageStyle.user_id }>Message: <span>{ customer_data?.message }</span></p>
+                    <p className={ messageStyle.user_id }>Message: <span>
+                        { customer_data?.message }<br />
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+                        Beatae cum esse eveniet illo inventore sequi sint!  <br />
+                        At aut beatae cum error eum, excepturi inventore officia <br />
+                        perspiciatis quam recusandae repudiandae vel?
+                    </span></p>
                 </div>
             </div>
             <div className={ messageStyle.loader__tile }/>
