@@ -1,4 +1,5 @@
 @import "../../_main";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 //-----------------------LOADER
 .loader {
   position: fixed;
@@ -9,6 +10,7 @@
   height: 100vh;
   transition: width 0s 1.4s ease;
 }
+
 .loader .loaded_page {
   position: absolute;
   z-index: 1;
@@ -18,35 +20,61 @@
   opacity: 0;
   transition: opacity 0.5s ease;
 }
+
 .loaded_page {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  .message_container{
-    width: calc(100% / 5 * 3);
-    min-height: calc(100% / 5 * 3);
+
+  .message_container {
+    position: relative;
+    padding: 4rem 2.5rem;
+    max-width: 50rem;
+    min-height: 20rem;
     border: 2px solid $bear_color;
-    padding: 1.5rem;
     box-shadow: 3px 4px 5px #8f4015, -3px -4px 5px #d7aa8f, -3px 4px 5px #a14a13;
+    text-align: justify;
     border-radius: 30px;
-    .user_id{
-      font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+    .user_id {
+      position: absolute;
+      top: .4rem;
+      left: 1.5rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      font-weight: bold;
       margin: .5rem 0;
     }
-    .user_info{
-      span{
+
+    .user_info {
+      font-size: 1.8rem;
+      font-family: "Dancing Script", cursive;
+
+      span {
         margin-right: 1.5rem;
       }
     }
+
+    .message {
+      font-family: "Dancing Script", cursive;
+      word-break: break-word;
+      font-size: 1.5rem;
+    }
   }
+
   background: $content_color;
 }
 
 .loader .loader__icon svg {
   transform-origin: 0 0;
 }
+
 .loader .loader__tile {
   position: absolute;
   left: 0;
@@ -55,106 +83,103 @@
   background-color: #f10c0c;
   transition: width 0.7s ease;
 }
+
 .loader .loader__tile:nth-child(0) {
   top: calc(-1 * 20%);
   transition-delay: -0.2s;
 }
+
 .loader .loader__tile:nth-child(1) {
   top: calc(0 * 20%);
   transition-delay: 0s;
 }
+
 .loader .loader__tile:nth-child(2) {
   top: calc(1 * 20%);
   transition-delay: 0.2s;
 }
+
 .loader .loader__tile:nth-child(3) {
   top: calc(2 * 20%);
   transition-delay: 0.4s;
 }
+
 .loader .loader__tile:nth-child(4) {
   top: calc(3 * 20%);
   transition-delay: 0.6s;
 }
+
 .loader .loader__tile:nth-child(5) {
   top: calc(4 * 20%);
   transition-delay: 0.8s;
 }
+
 .loader--active {
   width: 100%;
   transition-delay: 0s;
 }
+
 .loader--active .loaded_page {
   opacity: 1;
   transition: opacity 0.5s 1.4s ease;
 }
+
 .loader--active .loader__tile {
   width: 100%;
 }
+
 .loader--active .loader__tile:nth-child(0) {
   transition-delay: -0.2s;
 }
+
 .loader--active .loader__tile:nth-child(1) {
   transition-delay: 0s;
 }
+
 .loader--active .loader__tile:nth-child(2) {
   transition-delay: 0.2s;
 }
+
 .loader--active .loader__tile:nth-child(3) {
   transition-delay: 0.4s;
 }
+
 .loader--active .loader__tile:nth-child(4) {
   transition-delay: 0.6s;
 }
+
 .loader--active .loader__tile:nth-child(5) {
   transition-delay: 0.8s;
 }
-//----------------------------INPUT
-.input_container{
-  margin-bottom: 100px;
-  position: relative;
-  width: 20rem;
-  display: flex;
-  border-bottom: 1px solid black;
 
-  label, .active{
-    cursor: pointer;
-    position: absolute;
-    top: 0.8rem;
-    left: .7rem;
-    color: $bear_color;
-    //font-family: 'Sevillana', cursive;
-    font-size: 1.6rem;
-    transition: top .5s, left .7s;
-  }
-  .active{
-    top: -.8rem;
-    left: .2rem;
-    color: whitesmoke;
-    font-size: 1.2rem;
-    transition: top .5s, left .7s;
-  }
-  input{
-    padding-left: .7rem;
-    width: 15rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    border: none;
-    outline: none;
-    background: transparent;
-  }
-  .search_icon{
-    cursor: pointer;
-    width: 5rem;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: .4rem;
-    i{
-      margin: 0;
-      padding: 0;
-      font-size: 1.4rem;
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .loaded_page {
+    .message_container {
+      margin: 0 .5rem;
+      padding: 4rem 2.5rem;
+      max-width: 50rem;
+      min-height: 20rem;
+      border: 2px solid $bear_color;
+      border-radius: 30px;
+      .user_id {
+        top: .4rem;
+        left: 1.5rem;
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin: .5rem 0;
+      }
+
+      .user_info {
+        font-size: 1.8rem;
+        span {
+          margin-right: 1.5rem;
+        }
+      }
+
+      .message {
+        font-size: 1.5rem;
+      }
     }
-    //background: #282c34;
   }
 }
