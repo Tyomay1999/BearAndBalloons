@@ -4,7 +4,7 @@ class Service {
     server_domain = process.env.REACT_APP_SERVER_DOMAIN;
 
     get_server_url() {
-        return this.server_url_local
+        return this.server_domain
     }
 }
 

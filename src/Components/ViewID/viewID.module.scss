@@ -1,4 +1,5 @@
 @import "../../_main";
+
 $right_deg: -20deg;
 $left_deg: 20deg;
 $message_background: whitesmoke;
@@ -12,6 +13,7 @@ $message_background: whitesmoke;
   height: 100vh;
   transition: width 0s 1.4s ease;
 }
+
 .loader .loaded_page {
   position: absolute;
   z-index: 1;
@@ -21,48 +23,56 @@ $message_background: whitesmoke;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
+
 .loaded_page {
   width: 100%;
   height: 100vh;
   background: $content_color;
-  .block{
+
+  .block {
     width: 100%;
   }
+
   .block.logo_block {
     height: calc(100% / 7 * 2);
     display: flex;
     justify-content: center;
     align-items: center;
-    h1{
+
+    h1 {
       margin: 0;
       padding: 0;
       font-size: 5rem;
       font-family: 'Sevillana', cursive;
       color: $bear_color;
-      span{
+
+      span {
         font-size: 6rem;
       }
     }
   }
+
   .block.middle_block {
     height: calc(100% / 7 * 3);
     display: flex;
     //background: purple;
     //-------------------LEFT_BLOCK--------------------------------------
-    .bear_left{
+    .bear_left {
       position: relative;
-      width: calc(100% / 5 );
+      width: calc(100% / 5);
       display: flex;
       justify-content: center;
       align-items: center;
-      .bear_image_container_l,.hide_bear_l{
+
+      .bear_image_container_l, .hide_bear_l {
         position: absolute;
         left: -5rem;
         width: 15rem;
         height: 15rem;
         transform: rotate($left_deg);
         transition: left 3s;
-        .message_l{
+
+        .message_l {
           position: absolute;
           width: 15em;
           top: 0;
@@ -74,26 +84,30 @@ $message_background: whitesmoke;
           background: $message_background;
           box-shadow: 3px 4px 5px black, -3px 4px 5px $content_color;
           z-index: 2;
-          span{
+
+          span {
             font-size: 1.375rem;
             font-family: 'Sevillana', cursive;
             font-weight: 600;
           }
         }
-        & > img{
+
+        & > img {
           width: 100%;
           height: 100%;
           z-index: 1;
           //transform: rotate(-($left_deg));
         }
       }
-      .hide_bear_l{
+
+      .hide_bear_l {
         left: -40rem;
         transition: left 3s;
       }
     }
+
     //-------------------LEFT_BLOCK_END--------------------------------------
-    .input_block{
+    .input_block {
       width: calc(100% / 5 * 3);
       display: flex;
       justify-content: center;
@@ -102,20 +116,22 @@ $message_background: whitesmoke;
     }
 
     //-------------------RIGHT_BLOCK--------------------------------------
-    .bear_right{
+    .bear_right {
       position: relative;
-      width: calc(100% / 5 );
+      width: calc(100% / 5);
       display: flex;
       justify-content: center;
       align-items: center;
-      .bear_image_container_r,.hide_bear_r{
+
+      .bear_image_container_r, .hide_bear_r {
         position: absolute;
         right: -5rem;
         width: 15rem;
         height: 15rem;
         transform: rotate($right_deg);
-          transition: right 3s;
-        .message_r{
+        transition: right 3s;
+
+        .message_r {
           position: absolute;
           width: 15em;
           top: 0;
@@ -127,35 +143,42 @@ $message_background: whitesmoke;
           background: $message_background;
           box-shadow: -3px 4px 5px black, 3px 4px 5px $content_color;
           z-index: 2;
-          span{
+
+          span {
             font-size: 1.375rem;
             font-family: 'Sevillana', cursive;
             font-weight: 600;
           }
         }
-        & > img{
+
+        & > img {
           width: 100%;
           height: 100%;
           z-index: 1;
           //transform: rotate(-($right_deg));
         }
       }
-      .hide_bear_r{
+
+      .hide_bear_r {
         right: -40rem;
         transition: right 3s;
       }
     }
+
     //-------------------RIGHT_BLOCK_END--------------------------------------
   }
+
   .block.under_block {
     height: calc(100% / 7 * 3);
     //background: pink;
   }
 }
+
 //---------------loader
 .loader .loader__icon svg {
   transform-origin: 0 0;
 }
+
 .loader .loader__tile {
   position: absolute;
   left: 0;
@@ -164,68 +187,84 @@ $message_background: whitesmoke;
   background-color: #61dafb;
   transition: width 0.7s ease;
 }
+
 .loader .loader__tile:nth-child(0) {
   top: calc(-1 * 20%);
   transition-delay: -0.2s;
 }
+
 .loader .loader__tile:nth-child(1) {
   top: calc(0 * 20%);
   transition-delay: 0s;
 }
+
 .loader .loader__tile:nth-child(2) {
   top: calc(1 * 20%);
   transition-delay: 0.2s;
 }
+
 .loader .loader__tile:nth-child(3) {
   top: calc(2 * 20%);
   transition-delay: 0.4s;
 }
+
 .loader .loader__tile:nth-child(4) {
   top: calc(3 * 20%);
   transition-delay: 0.6s;
 }
+
 .loader .loader__tile:nth-child(5) {
   top: calc(4 * 20%);
   transition-delay: 0.8s;
 }
+
 .loader--active {
   width: 100%;
   transition-delay: 0s;
 }
+
 .loader--active .loaded_page {
   opacity: 1;
   transition: opacity 0.5s 1.4s ease;
 }
+
 .loader--active .loader__tile {
   width: 100%;
 }
+
 .loader--active .loader__tile:nth-child(0) {
   transition-delay: -0.2s;
 }
+
 .loader--active .loader__tile:nth-child(1) {
   transition-delay: 0s;
 }
+
 .loader--active .loader__tile:nth-child(2) {
   transition-delay: 0.2s;
 }
+
 .loader--active .loader__tile:nth-child(3) {
   transition-delay: 0.4s;
 }
+
 .loader--active .loader__tile:nth-child(4) {
   transition-delay: 0.6s;
 }
+
 .loader--active .loader__tile:nth-child(5) {
   transition-delay: 0.8s;
 }
+
 //----------------------------INPUT
-.input_container{
+.input_container {
   margin-bottom: 100px;
   position: relative;
   width: 20rem;
   display: flex;
   border-bottom: 1px solid black;
 
-  label, .active{
+  label, .active {
     cursor: pointer;
     position: absolute;
     top: 0.8rem;
@@ -235,14 +274,16 @@ $message_background: whitesmoke;
     font-size: 1.6rem;
     transition: top .5s, left .7s;
   }
-  .active{
+
+  .active {
     top: -.8rem;
     left: .2rem;
     color: whitesmoke;
     font-size: 1.2rem;
     transition: top .5s, left .7s;
   }
-  input{
+
+  input {
     padding-left: .7rem;
     width: 15rem;
     height: 3rem;
@@ -251,7 +292,8 @@ $message_background: whitesmoke;
     outline: none;
     background: transparent;
   }
-  .search_icon{
+
+  .search_icon {
     cursor: pointer;
     width: 5rem;
     height: 100%;
@@ -259,30 +301,82 @@ $message_background: whitesmoke;
     align-items: flex-end;
     justify-content: center;
     padding-bottom: .4rem;
-    i{
+
+    i {
       margin: 0;
       padding: 0;
       font-size: 1.4rem;
     }
+
     //background: #282c34;
   }
 }
+
 //---------------------Logo
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .block.middle_block {
+    .bear_right {
+      .bear_image_container_r, .hide_bear_r {
+        bottom: 0;
+        right: -4rem !important;
+        width: 10rem !important;
+        height: 10rem !important;
+        .message_r {
+          span {
+            font-size: 1.2rem !important;
+          }
+        }
+      }
+
+      .hide_bear_r {
+        right: -40rem !important;
+      }
+    }
+    .bear_left {
+      .bear_image_container_l, .hide_bear_l {
+        left: -4rem;
+        width: 10rem !important;
+        height: 10rem !important;
+        .message_l {
+          span {
+            font-size: 1.2rem !important;
+          }
+        }
+      }
+
+      .hide_bear_l {
+        left: -40rem !important;
+      }
+    }
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  .block.middle_block {
+    .bear_right {
+      .bear_image_container_r, .hide_bear_r {
+        bottom: 0;
+      }
+    }
+  }
+}
 @media screen and (min-width: 320px) and (max-width: 400px) {
   .logo_block {
-    h1{
+    h1 {
       font-size: 3rem !important;
-      span{
+
+      span {
         font-size: 4rem !important;
       }
     }
   }
 }
+
 @media screen and (min-width: 401px) and (max-width: 495px) {
   .logo_block {
-    h1{
+    h1 {
       font-size: 4rem !important;
-      span{
+
+      span {
         font-size: 5rem !important;
       }
     }
@@ -291,9 +385,10 @@ $message_background: whitesmoke;
 
 @media screen and (min-width: 496px) and (max-width: 720px) {
   .logo_block {
-    h1{
+    h1 {
       font-size: 5rem !important;
-      span{
+
+      span {
         font-size: 6rem !important;
       }
     }
