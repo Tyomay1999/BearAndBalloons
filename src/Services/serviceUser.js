@@ -5,7 +5,7 @@ class Service {
             user_name: "Lana",
             inst: "@lana_08.08",
             message: {
-                line_1: "Congratulations dear @Lana. Your instagram nickname won special Gift from our newly opened company.Happy New year, May your dreams and wishes come to reality!!",
+                line_1: "Congratulations dear @Lana! Your instagram nickname won special gift from our new opened company.Happy New year, May your dreams and wishes come to reality!!",
                 line_2:"Let this year be with full of Balloon’s And Bears."
             }
         },

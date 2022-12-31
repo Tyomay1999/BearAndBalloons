@@ -38,7 +38,6 @@ const ViewID = ( { is_touched } ) => {
     }, [is_touched, re_message])
 
     const handler_id = ( id ) => {
-        console.log( id )
         dispatch( send_customer_id( id ) )
     }
     return <div className={ viewIDStyles.main }>
@@ -65,7 +64,7 @@ const ViewID = ( { is_touched } ) => {
                             <div className={ viewIDStyles.message_l }>
                                 <span>
                                     You have a secret key,<br/>
-                                Which is written on pieces of paper
+                                Which is written on the back side of papers
                                 </span>
                             </div>
                             <img src={ bear } alt="Bear"/>
@@ -124,8 +123,8 @@ const ViewID = ( { is_touched } ) => {
                             <div className={ viewIDStyles.message_r }>
                                 <span>
                                     Write your id<br/>
-                                    Which is written on one
-                                    of the pieces of paper.
+                                    Which is written on the one
+                                    of the piece of paper.
                                 </span>
                             </div>
                             <img src={ bear } alt="Bear"/>
