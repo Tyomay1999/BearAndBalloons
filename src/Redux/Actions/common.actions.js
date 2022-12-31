@@ -7,6 +7,7 @@ export const NOTIFICATION = "SET NOTIFICATION"
 export const CUSTOMER_DATA = "SET CUSTOMER DATA"
 export const SHOW_CUSTOMER_INFO = "CUSTOMER INFO"
 export const CLEAR_NOTIFICATION = "CLEAR NOTIFICATION"
+export const SECRET_KEY = "SECRET KEY"
 
 export const change_loading = ( payload = false ) => {
     return {
@@ -42,6 +43,13 @@ export const clear_notification = () => {
     }
 }
 
+export const set_secret_key = (payload) => {
+    return {
+        type: SECRET_KEY,
+        payload
+    }
+}
+
 
 
 export const send_customer_id = customer_id => async dispatch => {
@@ -55,6 +63,9 @@ export const send_customer_id = customer_id => async dispatch => {
         )
         if ( response.status ) {
             // dispatch( set_customer_data( response?.data ) )
+            if(serverUser.check_secret_key(customer_id)){
+                return dispatch(set_secret_key(true))
+            }
             if(serverUser.check_user_id(customer_id) || serverUser.check_user_id(customer_id) === 0){
                 return dispatch(set_customer_data(serverUser.check_user_id(customer_id)))
             } else {

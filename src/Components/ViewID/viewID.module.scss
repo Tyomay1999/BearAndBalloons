@@ -38,7 +38,12 @@ $message_background: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    & > img{
+      margin-right: .5rem;
+      width: 6rem;
+      height: 6rem;
+      object-fit: cover;
+    }
     h1 {
       margin: 0;
       padding: 0;
@@ -184,7 +189,7 @@ $message_background: whitesmoke;
   left: 0;
   width: 0;
   height: 20%;
-  background-color: #61dafb;
+  background-color: #eab9a0;
   transition: width 0.7s ease;
 }
 
@@ -360,6 +365,10 @@ $message_background: whitesmoke;
 }
 @media screen and (min-width: 320px) and (max-width: 400px) {
   .logo_block {
+    & > img {
+      width: 3.8rem !important;
+      height: 3.8rem !important;
+    }
     h1 {
       font-size: 3rem !important;
 
@@ -372,6 +381,10 @@ $message_background: whitesmoke;
 
 @media screen and (min-width: 401px) and (max-width: 495px) {
   .logo_block {
+    & > img {
+      width: 4.8rem !important;
+      height: 4.8rem !important;
+    }
     h1 {
       font-size: 4rem !important;
 
@@ -384,6 +397,10 @@ $message_background: whitesmoke;
 
 @media screen and (min-width: 496px) and (max-width: 720px) {
   .logo_block {
+    & > img {
+      width: 5.8rem !important;
+      height: 5.8rem !important;
+    }
     h1 {
       font-size: 5rem !important;
 

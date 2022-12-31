@@ -16,8 +16,11 @@ class Service {
             message: "Any text here"
         }
     ]
-    server_url = process.env.REACT_APP_SERVER_URL;
+    secret_key = process.env.REACT_APP_SECRET_KEY;
+    check_secret_key(key){
+        return key === this.secret_key;
 
+    }
     check_user_id( id ) {
         if ( this.users[ 0 ].id === id ) {
             return 0

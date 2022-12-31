@@ -20,9 +20,10 @@ const ViewID = ( { is_touched } ) => {
 
     useEffect(() => {
         //-----------BEAR_L
-        if(is_touched){
+        if(is_touched && !show_bear_l){
             setTimeout(() => {
                 change_poss_bear_l(true)
+                change_poss_bear_r(false)
             }, 30000)
         }
     }, [is_touched, re_message])
@@ -45,14 +46,17 @@ const ViewID = ( { is_touched } ) => {
             className={ is_touched ? `${ viewIDStyles.loader } ${ viewIDStyles[ 'loader--active' ] }` : viewIDStyles.loader }>
             <div className={ viewIDStyles.loaded_page }>
                 <div
-                    onClick={() => set_message_activity(!re_message)}
                     className={ `${ viewIDStyles.logo_block } ${ viewIDStyles.block }` }>
-                    <h1><span>🧸</span>Bear & Balloons<span>🎈</span></h1>
+                    <img src={bear} alt="bear"/>
+                    <h1>Bear & Balloons<span>🎈</span></h1>
                 </div>
                 <div className={ `${ viewIDStyles.middle_block } ${ viewIDStyles.block }` }>
                     <div className={ viewIDStyles.bear_left }>
                         <div
-                            onClick={() => change_poss_bear_l(!show_bear_l)}
+                            onClick={() => {
+                                set_message_activity(!re_message)
+                                change_poss_bear_l( false )
+                            }}
                             className={
                                 show_bear_l ? viewIDStyles.bear_image_container_l
                                     :`${viewIDStyles.bear_image_container_l} ${viewIDStyles.hide_bear_l}`
@@ -60,9 +64,8 @@ const ViewID = ( { is_touched } ) => {
                         >
                             <div className={ viewIDStyles.message_l }>
                                 <span>
-                                    Write your id<br/>
-                                    Which is written on one
-                                    of the pieces of paper.
+                                    You have a secret key,<br/>
+                                Which is written on pieces of paper
                                 </span>
                             </div>
                             <img src={ bear } alt="Bear"/>
@@ -112,7 +115,7 @@ const ViewID = ( { is_touched } ) => {
                     </div>
                     <div className={ viewIDStyles.bear_right }>
                         <div
-                            onClick={() => change_poss_bear_r(!show_bear_r)}
+                            onClick={() => change_poss_bear_r(false)}
                             className={
                                 show_bear_r ? viewIDStyles.bear_image_container_r
                                     :`${viewIDStyles.bear_image_container_r} ${viewIDStyles.hide_bear_r}`
@@ -120,8 +123,9 @@ const ViewID = ( { is_touched } ) => {
                         >
                             <div className={ viewIDStyles.message_r }>
                                 <span>
-                                    You have a secret key,<br/>
-                                Which is written on pieces of paper
+                                    Write your id<br/>
+                                    Which is written on one
+                                    of the pieces of paper.
                                 </span>
                             </div>
                             <img src={ bear } alt="Bear"/>

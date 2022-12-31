@@ -30,7 +30,7 @@ const Message = ( {
         if(show_bottom_bear && bottom_bear_message === "Anything else"){
             setTimeout(() => {
                 set_bottom_bear_message("Touch me")
-            }, 5000)
+            }, 12000)
         }
     }, [show_bottom_bear])
 
