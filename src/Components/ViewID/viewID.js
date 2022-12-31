@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import viewIDStyles from './viewID.module.scss'
 import { useDispatch } from "react-redux";
 import { send_customer_id } from "../../Redux/Actions/common.actions";
@@ -14,8 +14,28 @@ const ViewID = ( { is_touched } ) => {
     const dispatch = useDispatch()
     const user_id_ref = useRef( 0 )
     const [ is_active, set_activity ] = useState( false )
+    const [ re_message, set_message_activity ] = useState( false )
     const [ show_bear_r, change_poss_bear_r ] = useState( false )
     const [ show_bear_l, change_poss_bear_l ] = useState( false )
+
+    useEffect(() => {
+        //-----------BEAR_L
+        if(is_touched){
+            setTimeout(() => {
+                change_poss_bear_l(true)
+            }, 30000)
+        }
+    }, [is_touched, re_message])
+
+    useEffect(() => {
+        //-----------BEAR_R
+        if(is_touched){
+            setTimeout(() => {
+                change_poss_bear_r(true)
+            }, 6000)
+        }
+    }, [is_touched, re_message])
+
     const handler_id = ( id ) => {
         console.log( id )
         dispatch( send_customer_id( id ) )
@@ -25,21 +45,20 @@ const ViewID = ( { is_touched } ) => {
             className={ is_touched ? `${ viewIDStyles.loader } ${ viewIDStyles[ 'loader--active' ] }` : viewIDStyles.loader }>
             <div className={ viewIDStyles.loaded_page }>
                 <div
-                    onClick={() => change_poss_bear_l(true)}
+                    onClick={() => set_message_activity(!re_message)}
                     className={ `${ viewIDStyles.logo_block } ${ viewIDStyles.block }` }>
                     <h1><span>🧸</span>Bear & Balloons<span>🎈</span></h1>
                 </div>
                 <div className={ `${ viewIDStyles.middle_block } ${ viewIDStyles.block }` }>
                     <div className={ viewIDStyles.bear_left }>
                         <div
+                            onClick={() => change_poss_bear_l(!show_bear_l)}
                             className={
                                 show_bear_l ? viewIDStyles.bear_image_container_l
                                     :`${viewIDStyles.bear_image_container_l} ${viewIDStyles.hide_bear_l}`
                             }
                         >
-                            <div
-                                onClick={() => change_poss_bear_l(!show_bear_l)}
-                                className={ viewIDStyles.message_l }>
+                            <div className={ viewIDStyles.message_l }>
                                 <span>
                                     Write your id<br/>
                                     Which is written on one
@@ -71,7 +90,7 @@ const ViewID = ( { is_touched } ) => {
                                    onChange={ ( e ) => {
                                        if ( e.target.value ) {
                                            set_activity( true )
-                                           user_id_ref.current = e.target.value
+                                           user_id_ref.current = e.target.value.trim()
                                        } else {
                                            set_activity( false )
                                        }
@@ -82,10 +101,9 @@ const ViewID = ( { is_touched } ) => {
                                         color: is_active ? colors.active_color_type_2 : colors.bear_color
                                     } }
                                     onClick={ () => {
-                                        // if ( user_id_ref.current ) {
-                                        //     handler_id( user_id_ref.current )
-                                        // }
-                                        change_poss_bear_r(true)
+                                        if ( user_id_ref.current ) {
+                                            handler_id( user_id_ref.current )
+                                        }
                                     } }
                                     className="bi bi-search"
                                 />
@@ -94,14 +112,13 @@ const ViewID = ( { is_touched } ) => {
                     </div>
                     <div className={ viewIDStyles.bear_right }>
                         <div
+                            onClick={() => change_poss_bear_r(!show_bear_r)}
                             className={
                                 show_bear_r ? viewIDStyles.bear_image_container_r
                                     :`${viewIDStyles.bear_image_container_r} ${viewIDStyles.hide_bear_r}`
                             }
                         >
-                            <div
-                                onClick={() => change_poss_bear_r(!show_bear_r)}
-                                className={ viewIDStyles.message_r }>
+                            <div className={ viewIDStyles.message_r }>
                                 <span>
                                     You have a secret key,<br/>
                                 Which is written on pieces of paper

@@ -22,6 +22,7 @@
 }
 
 .loaded_page {
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -66,6 +67,75 @@
       word-break: break-word;
       font-size: 1.5rem;
     }
+  }
+  $bear_block_deg: 30deg;
+  .bear_block,.bear_block_hide{
+    position: absolute;
+    bottom: -4.5rem;
+    width: 15rem;
+    height: 15rem;
+    transform: rotate(30deg);
+    text-align: center;
+    transition: bottom 3s;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & > span{
+      position: absolute;
+      top: 4rem;
+      left: -7rem;
+      font-size: 1.8rem;
+      font-family: "Dancing Script", cursive;
+      font-weight: bold;
+      padding: .5rem .5rem;
+      width: 10rem;
+      height: 4rem;
+      border-radius: 1rem;
+      background: whitesmoke;
+      transform: rotate(-20deg);
+    }
+  }
+  .bear_block_hide{
+    bottom: -30rem;
+    transition: bottom 3s;
+  }
+
+
+  .top_bear_block, .top_bear_block_hide{
+    position: absolute;
+    top: 4rem;
+    left: -6rem;
+    width: 12rem;
+    height: 12rem;
+    text-align: center;
+    transition: left 4s;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & > span{
+      position: absolute;
+      top: 4rem;
+      right: -12rem;
+      font-size: 1.3rem;
+      font-family: "Dancing Script", cursive;
+      font-weight: bold;
+      padding: .5rem .5rem;
+      width: 15rem;
+      //height: 4rem;
+      border-radius: 1rem;
+      background: whitesmoke;
+    }
+  }
+  .top_bear_block_hide{
+    left: -30rem;
+    transition: left 4s;
   }
 
   background: $content_color;
@@ -153,7 +223,7 @@
 }
 
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 520px) {
   .loaded_page {
     .message_container {
       margin: 0 .5rem;
@@ -179,6 +249,16 @@
 
       .message {
         font-size: 1.5rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 360px) {
+  .loaded_page {
+    .message_container {
+      .message {
+        font-weight: bold;
+        font-size: 1.2rem;
       }
     }
   }

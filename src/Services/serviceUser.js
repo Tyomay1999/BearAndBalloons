@@ -4,7 +4,10 @@ class Service {
             id: process.env.REACT_APP_USER_ID,
             user_name: "Lana",
             inst: "@lana_08.08",
-            message: "Any text here"
+            message: {
+                line_1: "Congratulations dear @Lana. Your instagram nickname won special Gift from our newly opened company.Happy New year, May your dreams and wishes come to reality!!",
+                line_2:"Let this year be with full of Balloon’s And Bears."
+            }
         },
         {
             id: process.env.REACT_APP_USER_ID - 2,
