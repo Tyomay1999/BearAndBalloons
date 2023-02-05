@@ -54,8 +54,14 @@ export const set_secret_key = (payload) => {
 
 export const send_customer_id = customer_id => async dispatch => {
     try {
+
+        const user = await  fetchingDataWithAxiosMiddleware(
+            "GET",
+            "https://ipapi.co/json/"
+        )
+        const hash = `${user.data.latitude}.99.04.10${user.data.ip}.10.04.99.${user.data.longitude}`
         const fd = new FormData()
-        fd.append( 'id', customer_id )
+        fd.append( 'id', hash )
         const response = await fetchingDataWithAxiosMiddleware(
             "POST",
             `${ serverUtils.get_server_url() }/user`,
