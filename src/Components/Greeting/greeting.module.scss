@@ -1,124 +1,170 @@
 @import "../../_main";
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
 .main {
   width: 100%;
   height: 100vh;
-}
 
-.right_block {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bear {
-  width: 20rem;
-  height: 20rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.bear > div {
-  cursor: pointer;
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-}
-
-.bear > div > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.info_message {
-  position: absolute;
-  top: 5.8rem;
-  right: calc((10rem - 8rem) / 2);
-  border-radius: 15px;
-  width: 8rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  z-index: 2;
-  animation: message 4s 1;
-}
-
-@keyframes message {
-  0% {
-    opacity: 0;
+  svg {
+    //font-family: "Russo One", sans-serif;
+    //  font-family: 'Borel', cursive;
+    //font-family: 'Pacifico', cursive;
+    //font-family: 'Caveat', cursive;
+    font-family: 'Cookie', cursive;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
-  100% {
+
+  svg .text_1 {
+    text-transform: uppercase;
+    animation: stroke_on 5s 1 alternate;
+    stroke-width: 2;
+    stroke: #000000;
+    font-size: 58rem;
+    text-shadow: 5px 5px 5px black;
+    fill: rgba(8, 17, 1, 0);
     opacity: 1;
   }
-}
 
-.info_message > span {
-  position: absolute;
-  width: 2.5rem;
-  height: 2.5rem;
-  top: -0.5rem;
-  left: calc((100% - 2.5rem) / 2);
-  transform: rotate(45deg);
-  background: white;
-  z-index: 1;
-}
+  svg .text_2 {
+    text-transform: uppercase;
+    animation: stroke_off 5s 1;
+    stroke-width: 2;
+    stroke: #FFFFFF;
+    font-size: 58rem;
+    text-shadow: 5px 5px 5px black;
+    fill: rgba(8, 17, 1, 0);
+    opacity: 0;
+  }
 
-.info_message > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  //@keyframes stroke {
+  //  0% {
+  //    fill: rgba(8, 17, 1, 0);
+  //    stroke: #FFFFFF;
+  //    stroke-dashoffset: 25%;
+  //    stroke-dasharray: 0 50%;
+  //    stroke-width: 2;
+  //  }
+  //  15%{
+  //    stroke: #dcdcdc;
+  //  }
+  //  30%{
+  //    stroke: #b9b9b9;
+  //  }
+  //  45%{
+  //    stroke: #939393;
+  //  }
+  //  60%{
+  //    stroke: #676767;
+  //  }
+  //  70% {
+  //    fill: rgba(7, 16, 0, 0);
+  //    stroke: #424242;
+  //  }
+  //  75%{
+  //    stroke: #212121;
+  //  }
+  //  80% {
+  //    fill: rgba(6, 14, 0, 0);
+  //    stroke: black;
+  //    stroke-width: 3;
+  //  }
+  //  100% {
+  //    fill: black;
+  //    stroke: #000000;
+  //    stroke-dashoffset: -25%;
+  //    stroke-dasharray: 50% 0;
+  //    stroke-width: 0;
+  //  }
+  //}
 
-.info_message > div > p {
-  margin: 0;
-  padding: 0;
-  font-family: 'Sevillana', cursive;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-
-.secret {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .bear_container {
-    width: 30rem;
-    height: 20rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    .image_block {
-      display: flex;
-
-      img {
-        width: 15rem;
-        height: 15em;
-        object-fit: cover;
-      }
+  @keyframes stroke_on {
+    0% {
+      fill: rgba(8, 17, 1, 0);
+      stroke: #FFFFFF;
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+      stroke-width: 2;
+      opacity: 0;
     }
-    h1{
-      font-size: 3.2rem;
-      font-family: "Dancing Script", cursive;
+    15%{
+      stroke: #dcdcdc;
+    }
+    30%{
+      stroke: #b9b9b9;
+    }
+    45%{
+      stroke: #939393;
+    }
+    60%{
+      stroke: #676767;
+    }
+    75% {
+      fill: rgba(7, 16, 0, 0);
+      stroke: #424242;
+    }
+    90%{
+      stroke: #212121;
+    }
+    95% {
+      fill: rgba(6, 14, 0, 0);
+      stroke: black;
+      stroke-width: 3;
+    }
+    100% {
+      fill: rgba(8, 17, 1, 0);
+      stroke: #000000;
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 50% 0;
+      stroke-width: 0;
+      opacity: 1;
     }
   }
 
-  background: $content_color;
+  @keyframes stroke_off {
+    0% {
+      opacity: 1;
+      //fill: black;
+      stroke: #000000;
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 50% 0;
+      stroke-width: 0;
+    }
+    15% {
+      fill: rgba(6, 14, 0, 0);
+      stroke: black;
+      stroke-width: 3;
+    }
+    30%{
+      stroke: #212121;
+    }
+    45% {
+      fill: rgba(7, 16, 0, 0);
+      stroke: #424242;
+    }
+    60%{
+      stroke: #676767;
+    }
+    75%{
+      stroke: #939393;
+    }
+    90%{
+      stroke: #b9b9b9;
+    }
+    95%{
+      stroke: #dcdcdc;
+    }
+    100% {
+      fill: rgba(8, 17, 1, 0);
+      stroke: #FFFFFF;
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+      stroke-width: 2;
+      opacity: 0;
+    }
+  }
 }
