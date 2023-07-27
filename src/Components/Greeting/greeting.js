@@ -7,6 +7,7 @@ import greetingStyle from './greeting.module.scss'
 // import { useDispatch, useSelector } from "react-redux";
 // import { send_customer_id } from "../../Redux/Actions/common.actions";
 
+// token -> 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
 const Greeting = () => {
     // const dispatch = useDispatch()
     // const common = useSelector(state => state.commonReducer)
