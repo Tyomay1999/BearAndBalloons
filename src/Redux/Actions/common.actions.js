@@ -110,7 +110,7 @@ export const fetchingDataWithAxiosMiddleware = async ( method, url, formData ) =
 
 export const get_large_image = () => async dispatch => {
     try {
-        console.log("Runn ---> ", `${ serverUtils.get_server_url() }/get_image`)
+        // console.log("Runn ---> ", `${ serverUtils.get_server_url() }/get_image`)
 
         return await fetchingDataWithAxiosMiddleware(
             "GET",
