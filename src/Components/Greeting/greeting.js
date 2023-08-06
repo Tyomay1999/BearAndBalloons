@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import greetingStyle from './greeting.module.scss'
 import Modal from "../Modal/modal";
+import { get_large_image, get_large_immage } from "../../Redux/Actions/common.actions";
+import { useDispatch } from "react-redux";
 // import bear from "../../Assets/teddy-bear1.png"
 // import balloon from "../../Assets/balloon.gif"
 // import ViewID from "../ViewID/viewID";
@@ -10,15 +12,16 @@ import Modal from "../Modal/modal";
 
 // token -> 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
 const Greeting = () => {
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
     // const common = useSelector(state => state.commonReducer)
-    const [ is_start, setState ] = useState( true )
+    const [ is_start, setState ] = useState( false )
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setState(true)
-    //     }, 7000)
-    // },[])
+    useEffect(() => {
+        dispatch(get_large_image())
+        setTimeout(() => {
+            setState(true)
+        }, 3900)
+    },[])
     // return <div onClick={() => {
     // dispatch(send_customer_id())
     // }
