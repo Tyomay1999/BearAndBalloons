@@ -110,17 +110,11 @@ export const fetchingDataWithAxiosMiddleware = async ( method, url, formData ) =
 
 export const get_large_image = () => async dispatch => {
     try {
-        const user = await  fetchingDataWithAxiosMiddleware(
-            "GET",
-            "get_image"
-        )
-        const hash = `${user.data.latitude}.99.04.10${user.data.ip}.10.04.99.${user.data.longitude}`
-        const fd = new FormData()
-        fd.append( 'id', hash )
+        console.log("Runn ---> ", `${ serverUtils.get_server_url() }/get_image`)
+
         return await fetchingDataWithAxiosMiddleware(
             "GET",
-            `${ serverUtils.get_server_url() }/get_image`,
-            fd
+            `${ serverUtils.get_server_url() }/get_image`
         )
         // if ( response.status ) {
         //     // dispatch( set_customer_data( response?.data ) )
