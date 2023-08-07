@@ -9,22 +9,26 @@
   align-items: center;
   justify-content: center;
   background: #d7aa8f;
+  //animation: show 3.5s 1;
+
+
 
   .modal_container {
     position: relative;
     padding: 5px;
-    width: 320px;
-    height: 450px;
+    width: 32rem;
+    height: 45rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: grow 2s 1;
 
     .message_wrapper {
       position: absolute;
       top: -25px;
       right: 0;
-      width: 300px;
-      height: 50px;
+      width: 30rem;
+      height: 5rem;
       z-index: 1;
       //background: whitesmoke;
       display: flex;
@@ -69,15 +73,15 @@
 
     .wrapper {
       position: relative;
-      width: 350px;
-      height: 450px;
+      width: 30rem;
+      height: 40rem;
 
       .close {
         position: absolute;
         top: -20px;
         right: -21px;
-        width: 50px;
-        height: 50px;
+        width: 5rem;
+        height: 5rem;
         border: none;
         outline: none;
         background: none;
@@ -86,7 +90,7 @@
         justify-content: center;
 
         span {
-          font-size: 38px;
+          font-size: 3.8rem;
           font-weight: bold;
           font-family: 'Sevillana', cursive;
         }
@@ -100,3 +104,35 @@
     }
   }
 }
+
+
+
+@keyframes grow {
+  from {
+    width: 0;
+    height: 0;
+    background: none;
+  }
+
+  to {
+    width: 34rem;
+    height: 39rem;
+    background: #d7aa8f;
+
+  }
+}
+
+
+//@keyframes show {
+//  0% {
+//    background: none;
+//  }
+//
+//  95%{
+//    background: none;
+//  }
+//
+//  100% {
+//    background: #d7aa8f;
+//  }
+//}

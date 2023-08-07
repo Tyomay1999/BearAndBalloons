@@ -36,13 +36,15 @@ const Greeting = () => {
     // </div>
 
     return <div className={ greetingStyle.main }>
-        <svg viewBox="0 0 1320 300">
-            <text
-                className={ greetingStyle.text_1 } x="50%" y="50%" dy=".35em"
-                  textAnchor="middle">
-                8.1&2
-            </text>
-        </svg>
+        {
+            !is_start ? <svg viewBox="0 0 1320 300">
+                <text
+                    className={ greetingStyle.text_1 } x="50%" y="50%" dy=".35em"
+                    textAnchor="middle">
+                    8.1&2
+                </text>
+            </svg> : <></>
+        }
 
         {
             is_start ? <Modal /> : <></>
