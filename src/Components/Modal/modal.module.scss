@@ -9,6 +9,11 @@
   align-items: center;
   justify-content: center;
   background: #d7aa8f;
+  & > h1{
+    font-size: 7rem;
+    text-align: center;
+    font-family: 'Sevillana', cursive;
+  }
   //animation: show 3.5s 1;
 
 
