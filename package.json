@@ -20,8 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "next dev -p 3004",
-    "start": "react-scripts start -p 3004",
+    "start": "PORT=3004 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
