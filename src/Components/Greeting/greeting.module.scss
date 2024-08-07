@@ -99,8 +99,8 @@
   align-items: center;
 
   .bear_container {
-    width: 30rem;
-    height: 20rem;
+    //width: 30rem;
+    //height: 20rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -115,7 +115,9 @@
       }
     }
     h1{
+      margin: 15px 0 25px 0;
       font-size: 3.2rem;
+      color: $bear_color;
       font-family: "Dancing Script", cursive;
     }
   }
