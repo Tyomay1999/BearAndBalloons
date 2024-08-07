@@ -21,6 +21,7 @@ const Greeting = () => {
             <div className={ greetingStyle.image_block }>
                 {/*<img src={ balloon } alt="balloon"/>*/}
                 <img src={ bear } alt="bear"/>
+
             </div>
             <h1></h1>
         </div>
