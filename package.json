@@ -20,6 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "next dev -p 3004",
     "start": "react-scripts start -p 3004",
     "build": "react-scripts build",
     "test": "react-scripts test",
